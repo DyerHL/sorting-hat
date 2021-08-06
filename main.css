@@ -1,18 +1,47 @@
+body {
+    background-color: rgb(48, 47, 47);
+}
+.card {
+    background-color: rgb(94, 92, 92);
+    color: white;
+}
+.btn {
+    background-color: black;
+    border-color: rgb(146, 146, 146);
+}
+.btn-primary:hover {
+    background-color: goldenrod;
+    border-color: rgb(100, 86, 24);
+} 
+.image {
+    padding: 5px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 375px;
+}
+
 .studentsHolderStyles {
     display: flex;
     flex-wrap: wrap;
     margin: 5%;
     justify-content: center;
 }
+.deathEaterHolderStyles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+    justify-content: center;
+}
 .formStyles {
-    /* display: flex;
+    display: flex;
     flex-wrap: no-wrap;
-    /* flex-shrink: 2;
-    margin: 5px;
-    align-items: stretch;  */
+    flex-shrink: 2;
+    margin: 20px;
+    align-items: stretch; 
+    justify-content: center;
 
 }
-.formcontrol {
-    /* display: flex;
-    flex-shrink: 0; */
+.form {
+    display: flex;
+    justify-content: center;
 }
