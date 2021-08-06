@@ -13,15 +13,15 @@ const loadForm = () => {
   let form = `
         
         <form id="sortingForm">
-          <input type="text" class="form-control" id="name"placeholder="Student's Name" required>
-          <button class="btn btn-outline-secondary" type="submit" id="sortMe">Sort Me</button>
+          <input type="text" class="form-control" id="name"placeholder="Student's Name" required />
+          <input class="btn btn-outline-secondary" type="submit" id="sortMe"></input>
         </form>  
         
     `;
  renderToDom("#formHolder", form);
   document
     .querySelector("#sortMe")
-    .addEventListener("click", handleFormSubmit); /*makes student card*/
+    .addEventListener("submit", handleFormSubmit); /*makes student card*/
 };
 
 /*returns a random house*/
