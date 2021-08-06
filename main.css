@@ -8,5 +8,14 @@ body {
     justify-content: center;
 }
 .formStyles {
+    /* display: flex;
+    flex-wrap: no-wrap;
+    /* flex-shrink: 2;
     margin: 5px;
+    align-items: stretch;  */
+
+}
+.formcontrol {
+    /* display: flex;
+    flex-shrink: 0; */
 }

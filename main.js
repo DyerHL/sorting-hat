@@ -8,15 +8,17 @@ const renderToDom = (divId, textToPrint) => {
   selectedDiv.innerHTML = textToPrint;
 };
 
-/*loads name form*/
+/*loads name input form*/
 const loadForm = () => {
   let form = `
-        <div class="form">
-          <input type="text" class="form-control" id="name" placeholder="Student's Name" aria-label="Recipient's username" aria-describedby="button-addon2">
-          <button class="btn btn-outline-secondary" type="button" id="sortMe">Sort Me</button>
-        </div>
+        
+        <form id="sortingForm">
+          <input type="text" class="form-control" id="name"placeholder="Student's Name" required>
+          <button class="btn btn-outline-secondary" type="submit" id="sortMe">Sort Me</button>
+        </form>  
+        
     `;
-  renderToDom("#formHolder", form);
+ renderToDom("#formHolder", form);
   document
     .querySelector("#sortMe")
     .addEventListener("click", handleFormSubmit); /*makes student card*/
@@ -28,6 +30,7 @@ const randomizer = () => {
   return randomHouse;
 };
 
+/*builds student card*/
 const cardBuilder = (studentsArray) => {
   let domString = "";
   studentsArray.forEach((student, i) => {
@@ -44,6 +47,7 @@ const cardBuilder = (studentsArray) => {
   renderToDom("#studentsHolder", domString);
 };
 
+/*adds student to array, displays card*/
 const handleFormSubmit = (event) => {
   event.preventDefault();
   const newStudent = {
@@ -52,20 +56,20 @@ const handleFormSubmit = (event) => {
   };
   studentsList.push(newStudent);
   cardBuilder(studentsList);
+  document.querySelector('#sortingForm').reset();
 };
 
+/*Removes student from array, adds to Voldemort's army*/
 const expel = (event) => {
   const targetId = event.target.id;
   const targetType = event.target.type;
   if (targetType === "button") {
-    studentsList.splice(targetId, 1);
-    cardBuilder(studentsList);
-    voldysArmy.push(studentsList[targetId])
+    let expelled = studentsList.splice(targetId, 1);
+    voldysArmy.push(...expelled);
 
+    cardBuilder(studentsList);
   }
 };
-
-console.log(voldysArmy)
 
 const buttonEvents = () => {
   document
