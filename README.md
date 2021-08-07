@@ -5,7 +5,7 @@ The Sorting Hat allows the user to submit any name of their choosing and have th
 [View App](sorting-hat-hld.netlify.app)
 
 ## Get Started <!-- OPTIONAL, but doesn't hurt -->
-
+git@github.com:DyerHL/sorting-hat.git
 
 ## About the User <!-- This is a scaled down user persona -->
 - The user of this app is likely in need of randomly assigning themselves, or a group of people, into teams. They, or their party, would be fans of Harry Potter and enjoy the process of assigning the teams with a Wizarding World theme. 
