@@ -1,6 +1,5 @@
 let studentsList = [];
 let voldysArmy = [];
-// const houses = ["Ravenclaw", "Gryffindor", "Hufflepuff", "Slytherin"];
 
 /*Render to DOM function*/
 const renderToDom = (divId, textToPrint) => {
@@ -41,17 +40,15 @@ const randomizer = () => {
 /*assigns image to house*/
 const assignImage = (house) => {
   if (house === 'Slytherin') {
-    return "https://m.media-amazon.com/images/I/71jTE5obH-L._AC_SL1200_.jpg";
+    return "https://www.logolynx.com/images/logolynx/53/5390e974544de6279c4d9cb6253e3a2c.jpeg";
   } else if  (house === 'Ravenclaw') {
     return "https://i.pinimg.com/originals/d9/7e/c1/d97ec181eb6a1503be859ca3743e2e1b.jpg";
-  } else if (house === 'HufflePuff') {
+  } else if (house === 'Hufflepuff') {
     return "https://i.pinimg.com/originals/14/49/2a/14492ad1ab4718672aa32926d3abef52.jpg";
   } else {
     return "https://cdn11.bigcommerce.com/s-ydriczk/images/stencil/original/products/88361/91122/Harry-Potter-Gryffindor-Crest-Official-wall-mounted-cardboard-cutout-buy-now-at-star__95823.1507640354.jpg?c=2";
   }
 };
-
-
 
 /*builds student card*/
 const cardBuilder = (studentsArray) => {
@@ -73,11 +70,11 @@ const cardBuilder = (studentsArray) => {
 /*adds student to array, displays card*/
 const handleFormSubmit = (event) => {
   event.preventDefault();
-  const img = assignImage();
+  const house = randomizer();
   const newStudent = {
     name: document.querySelector("#name").value,
-    house: randomizer(),
-    image: img,
+    house, //shorthand object notation
+    image: assignImage(house),
   };
   studentsList.push(newStudent);
   cardBuilder(studentsList);

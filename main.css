@@ -16,8 +16,7 @@ body {
 .image {
     padding: 5px;
     border-radius: 10px;
-    width: 100%;
-    max-width: 375px;
+    max-height: 180px;
 }
 
 .studentsHolderStyles {
@@ -39,7 +38,6 @@ body {
     margin: 20px;
     align-items: stretch; 
     justify-content: center;
-
 }
 .form {
     display: flex;
